@@ -1,19 +1,19 @@
-/*
+/**
  * This is the header file for the CST class
  * It contains the class declaration and the service
  * structure declaration.
  * 
  * Created on: Nov 2 2014 13:24:11
  * Author: Icebreaker
- */
+ **/
 
 #pragma once
 #include "Countable.h"
 #include "Serializable.h"
 
-/*
+/**
  * Route structure declaration
- */
+ **/
 struct Route
 {
 	string RtName;
@@ -22,9 +22,9 @@ struct Route
 	friend ostream& operator <<(ostream &os, Route a);
 };
 
-/*
+/**
  * The CST class prtotype
- */
+ **/
 class CST : public Serializable, public Countable<CST>
 {
 public:
@@ -33,7 +33,6 @@ public:
 	tm SellTime;
 	Route Rt;
 	string Passenger;
-	//virtual unsigned UsesLeft();
 	string Serialize();
 	void DeSerialize(char*);
 	int GetCurrentNumber();

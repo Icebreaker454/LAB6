@@ -1,37 +1,54 @@
-/*
+/**
  * The main source file for my LAB6, which contains the main function 
  * and the necessary recources for the project.
  *
  * Created on: Nov 2 2014 13:02:21
  * Author: Icebreaker
- */
+ **/
 
 #include "CST.h"
 
-/* 
+
+/**
+ * Polymorph function which sorts an array of Countable Objects by 
+ * the Object_Number variables
+ **/
+template<class T>
+void Countable_sort_by_objNum(Countable<T>* array, int _beg, int _end)
+{
+	int _tmpbeg = _beg, _tmpend = _end, _tmpmid = array[(_beg + _end) / 2].GetCurrentNumber();
+
+	do
+	{
+		while (array[_tmpbeg] < _tmpmid)
+	}
+}
+
+
+/**
  * Main function
- */
+ **/
 int main()
 {
-	/*
+	/**
 	 * Getting current time.
-	 */
+	 **/
 	tm* CurrentTime = new tm;
 	time_t timer = time(NULL);
 	localtime_s(CurrentTime, &timer);
 	
-	/*
+	/**
 	 * Making a Route.
-	 */
+	 **/
 	Route Rt = {
 		"LVIV-KYIV",	/* NAME */
 		*CurrentTime,	/* TIME */
 		300				/*PRICE*/
 	};
 
-	/*
+	/**
 	 * Testing the Countable interface.
-	 */
+	 **/
 	cout << "Countable interface testing."
 		<< endl;
 
@@ -87,9 +104,9 @@ int main()
 		<< endl;
 
 
-	/*
+	/**
 	 * Testing the Serializable interface
-	 */
+	 **/
 	cout << "Serializable interface testing."
 		<< endl;
 	
@@ -106,9 +123,9 @@ int main()
 	cout << ticket2									/* Outputing the CST */
 		<< endl;
 
-	/*
+	/**
 	 * Post - execution issues.
-	 */
+	 **/
 	_getch();
 	return 0;
 }

@@ -1,25 +1,25 @@
-/*
+/**
 * This is the .cpp file for the CST class
 * It contains function declarations for
 * the class.
 *
 * Created on: Nov 2 2014 13:27:48
 * Author: Icebreaker
-*/
+**/
 
 #include "CST.h"
 
-/*
+/**
  * The CST default constructor
- */
+ **/
 CST::CST()
 {
 	cout << "A class instance of CST has been created." << endl;
 }
 
-/*
+/**
  * The CST parametral constructor
- */
+ **/
 CST::CST(	unsigned PaydeskID, 
 			unsigned TicketID,
 			tm SellTime, 
@@ -37,9 +37,9 @@ CST::CST(	unsigned PaydeskID,
 }
 
 
-/*
+/**
  * A serializable interface method which converts an object to string
- */
+ **/
 string CST::Serialize()
 {
 	stringstream Serialized;
@@ -63,19 +63,19 @@ string CST::Serialize()
 }
 
 
-/*
+/**
  * A serializable interface method which converts a string
  * to CST object
- */
+ **/
 void CST::DeSerialize(char* src)
 {
-	/*
+	/**
 	 * WARNING: SHIT CODE OCCURENCIES!
-	 */
+	 **/
 
-	/*
+	/**
 	 * The delimiter string, defined by myself 
-	 */
+	 **/
 	char* delim = "/*/";						
 
 	char* entry = src;								/* Reading the PaydeskID field */
@@ -122,38 +122,38 @@ void CST::DeSerialize(char* src)
 	this->Passenger = src;
 }
 
-/*
+/**
  * This function gets the Object_Number variable 
  * from the Countable interface
- */
+ **/
 int CST::GetCurrentNumber()
 {
 	return this->Object_Number;
 }
 
-/*
+/**
  * This function gets the Objects_Created variable
  * from the Countable interface
- */
+ **/
 int CST::Get_Objects_Created()
 {
 	return this->Objects_Created;
 }
 
 
-/*
+/**
  * This function gets the Objects_Alive variable
  * from the Countable interface
- */
+ **/
 int CST::Get_Objects_Alive()
 {
 	return this->Objects_Alive;
 }
 
 
-/*
+/**
  * This operator outputs a CST object to the screen
- */
+ **/
 ostream& operator <<(	ostream& cout, 
 						const CST a)
 {
@@ -194,9 +194,9 @@ ostream& operator <<(	ostream& cout,
 	}
 }
 
-/*
+/**
  * This operator inputs  a CST object from a file
- */
+ **/
 ifstream& operator >>(	ifstream& IN, 
 						CST& a)
 {
@@ -218,9 +218,9 @@ ifstream& operator >>(	ifstream& IN,
 }
 
 
-/*
+/**
  * This operator outputs a CST object to a file
- */
+ **/
 ofstream& operator <<(	ofstream& OUT, 
 						CST a)
 {
@@ -236,10 +236,10 @@ ofstream& operator <<(	ofstream& OUT,
 }
 
 
-/*
+/**
  * This operator outputs a Route structure to the
  * screen
- */
+ **/
 ostream& operator <<(	ostream& os, 
 						const Route a)
 {

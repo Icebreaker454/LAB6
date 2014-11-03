@@ -7,6 +7,10 @@
  */
 
 #pragma once
+
+/**
+ * The Countable template interface prototype
+ **/
 template <class T>
 class Countable
 {
