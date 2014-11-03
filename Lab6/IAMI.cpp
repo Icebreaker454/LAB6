@@ -17,7 +17,8 @@ template<class T>
 void Countable_sort_by_objNum(Countable<T>* array, int _beg, int _end)
 {
 	int _tmpbeg = _beg, _tmpend = _end, _tmpmid = array[(_beg + _end) / 2].GetCurrentNumber();
-
+	
+	fuck
 	do
 	{
 		while (array[_tmpbeg] < _tmpmid)
