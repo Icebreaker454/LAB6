@@ -38,6 +38,19 @@ CST::CST(	unsigned PaydeskID,
 
 
 /**
+ * Copy constructor
+ **/
+CST::CST(const CST& _copyobj)
+{
+	this->PaydeskID = _copyobj.PaydeskID;
+	this->TicketID = _copyobj.TicketID;
+	this->Rt = _copyobj.Rt;
+	this->SellTime = _copyobj.SellTime;
+	this->Passenger = _copyobj.Passenger;
+}
+
+
+/**
  * A serializable interface method which converts an object to string
  **/
 string CST::Serialize()
@@ -155,7 +168,7 @@ int CST::Get_Objects_Alive()
  * This operator outputs a CST object to the screen
  **/
 ostream& operator <<(	ostream& cout, 
-						const CST a)
+						const CST& a)
 {
 	if (&a)
 	{
@@ -221,18 +234,18 @@ ifstream& operator >>(	ifstream& IN,
 /**
  * This operator outputs a CST object to a file
  **/
-ofstream& operator <<(	ofstream& OUT, 
-						CST a)
+ofstream& operator <<(	ofstream& Out, 
+						 CST& a)
 {
 
-	OUT << a.PaydeskID << endl
+	Out << a.PaydeskID << endl
 		<< a.TicketID << endl
 		<< mktime(&a.SellTime) << endl
 		<< a.Rt.RtName << endl
 		<< mktime(&a.Rt.RtTime) << endl
 		<< a.Rt.RtPrice << endl
 		<< a.Passenger << endl;
-	return OUT;
+	return Out;
 }
 
 
@@ -241,7 +254,7 @@ ofstream& operator <<(	ofstream& OUT,
  * screen
  **/
 ostream& operator <<(	ostream& os, 
-						const Route a)
+						const Route& a)
 {
 
 	os << "------------------------------------------------------------" << endl

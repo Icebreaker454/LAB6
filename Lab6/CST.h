@@ -19,7 +19,7 @@ struct Route
 	string RtName;
 	tm RtTime;
 	double RtPrice;
-	friend ostream& operator <<(ostream &os, Route a);
+	friend ostream& operator <<(ostream &os, const Route& a);
 };
 
 /**
@@ -39,11 +39,12 @@ public:
 	int Get_Objects_Created();
 	int Get_Objects_Alive();
 	friend class Paydesk;
-	friend ostream& operator <<(ostream&, const CST);
+	friend ostream& operator <<(ostream&, const CST&);
 	friend ifstream& operator >>(ifstream&, CST&);
-	friend ofstream& operator <<(ofstream&, CST);
+	friend ofstream& operator <<(ofstream&, CST&);
 	friend CST* LoadFromFile(ifstream&);
 	CST(unsigned, unsigned, tm, Route, string);
 	CST(void);
+	CST(const CST&);
 };
 
